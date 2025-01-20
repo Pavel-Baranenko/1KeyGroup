@@ -1,0 +1,106 @@
+.wrap {
+  position: fixed;
+  display: none;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-image: url('/img/elements/Subtract.svg');
+  min-height: 50px;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 5px 15px 10px 15px;
+}
+
+.bg {
+  width: 100%;
+
+  path {
+    width: 100%;
+  }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #B8C6E3;
+  padding-top: 5px;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  gap: 2px;
+}
+
+.link:hover {
+  path {
+    fill: #0000FF;
+  }
+
+  color: #0000FF;
+}
+
+.btn {
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  margin-top: -50px;
+  padding: 0 !important;
+
+  &::after,
+  &::before {
+    border-radius: 50% !important;
+  }
+
+  svg {
+    position: relative;
+    z-index: 4;
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 10px;
+  position: absolute;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+}
+
+.more {
+  position: absolute;
+  right: -15px;
+  bottom: 100%;
+  display: flex;
+  gap: 8px;
+  font-weight: 500;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px 0 0 0;
+  padding: 10px 25px 10px 10px;
+
+  box-shadow: -2px -2px 4px 0px rgba(0, 0, 230, 0.2);
+}
+
+@media (max-width:1080px) {
+  .wrap {
+    display: block;
+  }
+}

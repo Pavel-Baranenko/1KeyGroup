@@ -1,0 +1,77 @@
+.full {
+  width: calc(100% - 200px);
+}
+
+.full__width {
+  flex: 0 1 100%;
+}
+
+.about {
+  margin-bottom: 20px;
+}
+
+.w100 {
+  width: 100%;
+}
+
+.w80 {
+  width: 80%;
+}
+
+.w60 {
+  width: 60%;
+}
+
+.w50 {
+  width: 50%;
+}
+
+.w30 {
+  width: 30%;
+}
+
+.w10 {
+  width: 10%;
+}
+
+
+///map
+///
+.map {
+  &__input {
+    width: calc(100% - 200px);
+  }
+
+  &__search__results {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+    margin-top: -10px;
+    padding: 20px 0 20px 0;
+    border-radius: 0 0 10px 10px;
+    background-color: #fff;
+    border: 2px solid #0000E6;
+    border-top: none;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__search__item {
+    padding: 5px 20px;
+    cursor: pointer;
+
+    span {
+      font-weight: 500;
+      font-size: 18px;
+    }
+
+    p {
+      color: #aaa;
+    }
+
+    &:hover {
+      background-color: #F1F7FF;
+    }
+  }
+
+}

@@ -1,0 +1,265 @@
+.wrapper {
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  main {
+    flex: 0 0 100%;
+  }
+}
+
+
+.section {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  padding-top: clamp(10px, 2vh, 30px);
+  padding-bottom: clamp(10px, 2vh, 30px);
+  padding-left: clamp(10px, 2vw, 40px);
+  padding-right: clamp(10px, 2vw, 40px);
+
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    padding-top: calmp(10px, 2vh, 30px);
+  }
+
+  &__map {
+    height: 500px;
+    border-radius: 10px;
+    background-color: #F1F7FF;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+  }
+}
+
+.desc {
+  padding-top: 20px;
+}
+
+.map__loader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 10px;
+  background-color: #F1F7FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub__heading {
+  padding: 50px 0px 20px 20px;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 120%;
+}
+
+.more svg {
+  transform: rotate(180deg);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e1edfd;
+
+  h1 {
+    font-weight: 500;
+    font-size: clamp(24px, 2vw, 32px);
+    line-height: 120%;
+  }
+}
+
+.box {
+  display: flex;
+  align-items: center;
+  padding-top: clamp(10px, 2vh, 20px);
+  padding-bottom: clamp(10px, 2vh, 20px);
+  gap: 10px;
+}
+
+.id {
+  margin-right: auto;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.created {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: #7786a5;
+}
+
+.images {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 2fr 1fr;
+
+  img {
+    border-radius: 10px;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1.4;
+  }
+
+  &__box {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
+
+.price {
+  font-weight: 500;
+  font-size: clamp(18px, 2vw, 32px);
+  line-height: 120%;
+  color: #0000E6;
+  margin-right: auto;
+}
+
+.additional__item {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 125%;
+  color: #0ab258;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background: #eafff3;
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  padding: clamp(10px, 2vw, 20px);
+  gap: clamp(15px, 2vw, 60px);
+
+  border-bottom: 1px solid #e1edfd;
+  border-top: 1px solid #e1edfd;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 5px 10px;
+
+    span {
+      font-weight: 500;
+      font-size: clamp(16px, 2vw, 24px);
+      line-height: 120%;
+      color: #2a344a;
+    }
+
+    p {
+      text-align: left;
+      font-weight: 400;
+      font-size: clamp(14px, 2vw, 16px);
+      line-height: 150%;
+      color: #7786a5;
+      width: 100%;
+    }
+  }
+}
+
+.specs {
+  &__item {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #e1edfd;
+    padding: clamp(10px, 2vw, 20px);
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: clamp(150px, 2vw, 250px);
+    color: #7786a5;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+
+    span:nth-child(n+2) {
+      position: relative;
+
+      &::after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: -10px;
+        border-radius: 2px;
+        border: 2px solid #c7d2e9;
+        width: 0;
+        height: 20px;
+      }
+    }
+  }
+}
+
+.heading {
+  font-weight: 500;
+  font-size: clamp(18px, 2vw, 32px);
+  line-height: 120%;
+}
+
+.image__wrap {
+  display: inline-flex;
+  flex-wrap: nowrap;
+  width: fit-content;
+
+  img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+}
+
+.image__item {
+  width: fit-content;
+}
+
+.slider {
+  position: relative;
+  overflow-x: hidden;
+}
+
+@media (max-width:1080px) {
+  .box {
+    flex-wrap: wrap;
+  }
+
+  .info {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}

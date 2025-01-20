@@ -1,0 +1,11 @@
+.pass_btn {
+  position: absolute;
+  right: 10px;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.active {
+  border: 2px solid #0000E6;
+}

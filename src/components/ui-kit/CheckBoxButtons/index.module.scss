@@ -1,0 +1,71 @@
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 16px;
+  line-height: 125%;
+}
+
+.btn {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  border-radius: 20px;
+
+  label {
+    min-height: 40px;
+    z-index: 2;
+    background-color: #f1f7ff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+
+  label.active {
+    background-color: #0000E6;
+    color: #fff;
+  }
+
+  input {
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+
+  input:checked+label {
+    background-color: #0000E6;
+    color: #fff;
+  }
+}
+
+.add {
+  height: 40px;
+  padding: 10px 20px;
+  color: #0000E6;
+  background-color: #F1F7FF;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 20px;
+}
+
+.add_box {
+  height: 40px;
+
+  input {
+    height: 38px;
+    border: 2px solid #0000E6;
+    border-radius: 20px 0 0 20px;
+    background-color: #fff;
+    max-width: 120px;
+    padding: 10px;
+    outline: none;
+  }
+
+  button {
+    padding: 10px 20px;
+    border-radius: 0 20px 20px 0;
+    background-color: #0000E6;
+    color: #fff;
+  }
+}
