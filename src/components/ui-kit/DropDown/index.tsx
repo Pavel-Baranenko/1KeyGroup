@@ -8,10 +8,11 @@ interface DropDown {
   value?: string | number,
   options?: Options[],
   onChange: (e: any) => void,
-  direction?: boolean
+  direction?: boolean,
+  className?: string
 }
 
-export default function DropDown({ value, onChange, options, direction }: DropDown) {
+export default function DropDown({ value, onChange, options, direction, className }: DropDown) {
 
   const [open, setOpen] = React.useState<boolean>(false)
 
@@ -43,7 +44,7 @@ export default function DropDown({ value, onChange, options, direction }: DropDo
         </>
         :
         <>
-          <div className={`${styles.top} ${open && styles.reverce}`} onClick={() => setOpen(!open)}>
+          <div className={`${styles.top} ${open && styles.reverce} ${className ? styles[className] : ""}`} onClick={() => setOpen(!open)}>
             <span>{value}</span>
             <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
               <path d="M4.5 7.75L8.64645 11.8964C8.84171 12.0917 9.15829 12.0917 9.35355 11.8964L13.5 7.75" stroke="#7786A5" stroke-width="1.5" stroke-linecap="round" />

@@ -1,9 +1,11 @@
+import { characteristics, Commission, Creator, Price } from "./Common"
 import { fileOptions } from "./Files"
 
 
-export interface characteristics {
-  label: string,
-  value: string
+export type Condition = {
+  status: string,
+  buildingQuarter?: number,
+  buildingYear?: number
 }
 
 export type Object = {
@@ -12,20 +14,13 @@ export type Object = {
   propertyType: string,
   propertySubType: string,
   characteristics: characteristics[],
-  condition: {
-    status: string,
-    buildingQuarter?: number,
-    buildingYear?: number
-  },
+  condition: Condition,
   appointment: string,
   location: {
     address: string,
     range: boolean
   },
-  price: {
-    cost?: number,
-    currency: string
-  },
+  price: Price,
   title: string,
   subTitle: string,
   photos: string[],
@@ -56,8 +51,8 @@ export type Object = {
     view: string[]
   },
   services: string[],
-  commission: {
-    cost?: number | null,
-    commissionType: string
-  }
+  commission: Commission,
+  creator?: number,
+  created?: Date,
+  updated?: Date,
 }

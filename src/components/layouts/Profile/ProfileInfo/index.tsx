@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { IUser } from '@/modules/types/User';
 import styles from '../index.module.scss'
+import { API_URL } from '@/http/intex';
 
 export default function ProfileInfo({ user }: { user: IUser }) {
 
@@ -45,7 +46,7 @@ export default function ProfileInfo({ user }: { user: IUser }) {
             <div className={styles.head}>
               <div className={styles.top}>
 
-                <img src={user.photo ? `https://rest.1key.group/storage/images/${user.id}/${user.photo}` : "/img/static/grey.png"} alt="" className='profilepic' />
+                <img src={user.photo ? `${API_URL}/storage/images/${user.id}/${user.photo}` : "/img/static/grey.png"} alt="" className='profilepic' />
                 <div className={styles.info}>
                   <div className={styles.info__left}>
                     <div className={styles.info__name}>{user.firstName} {user.lastName}</div>

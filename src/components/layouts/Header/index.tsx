@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Context } from '@/store/provider';
 import { observer } from 'mobx-react-lite';
 import Link from 'next/link';
+import { API_URL } from '@/http/intex';
+import ChatPopup from '@/components/chat/ChatPopup';
 
 const Header = observer(({ broker }: { broker?: boolean }) => {
   const { store } = React.useContext(Context)
@@ -209,9 +211,14 @@ const Header = observer(({ broker }: { broker?: boolean }) => {
                   }
 
                 </nav>
-
+                <ChatPopup />
                 {store.isAuth ?
                   <div className="header__user">
+                    <button className="header-btn">
+                      <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M2.25 9C2.25 5.27208 5.27208 2.25 9 2.25C12.7279 2.25 15.75 5.27208 15.75 9C15.75 12.7279 12.7279 15.75 9 15.75C7.81307 15.75 6.69979 15.4443 5.73229 14.9079C5.36294 14.7031 4.90425 14.6411 4.46977 14.7947L2.57783 15.4632C2.45893 15.5052 2.34441 15.3907 2.38642 15.2718L3.08263 13.3015C3.23024 12.8838 3.17857 12.4431 2.99278 12.0817C2.5182 11.1587 2.25 10.1118 2.25 9ZM9 0.75C4.44365 0.75 0.75 4.44365 0.75 9C0.75 10.3559 1.07766 11.6374 1.65878 12.7676C1.66527 12.7802 1.66754 12.7907 1.66808 12.7971C1.66833 12.8 1.6682 12.8017 1.66811 12.8024L0.972119 14.772C0.509994 16.0799 1.76977 17.3396 3.07758 16.8775L4.96889 16.2092C4.96942 16.2091 4.97046 16.209 4.97211 16.2091C4.97279 16.2091 4.97357 16.2092 4.97446 16.2093C4.9811 16.21 4.99204 16.2126 5.00497 16.2198C6.18933 16.8764 7.55216 17.25 9 17.25C13.5563 17.25 17.25 13.5563 17.25 9C17.25 4.44365 13.5563 0.75 9 0.75ZM6.22501 9.03711C6.22501 9.55488 5.80527 9.97461 5.28751 9.97461C4.76974 9.97461 4.35001 9.55488 4.35001 9.03711C4.35001 8.51934 4.76974 8.09961 5.28751 8.09961C5.80527 8.09961 6.22501 8.51934 6.22501 9.03711ZM9.97501 9.03711C9.97501 9.55488 9.55527 9.97461 9.03751 9.97461C8.51974 9.97461 8.10001 9.55488 8.10001 9.03711C8.10001 8.51934 8.51974 8.09961 9.03751 8.09961C9.55527 8.09961 9.97501 8.51934 9.97501 9.03711ZM12.7875 9.97461C13.3053 9.97461 13.725 9.55488 13.725 9.03711C13.725 8.51934 13.3053 8.09961 12.7875 8.09961C12.2697 8.09961 11.85 8.51934 11.85 9.03711C11.85 9.55488 12.2697 9.97461 12.7875 9.97461Z" fill="#2A344A" />
+                      </svg>
+                    </button>
                     <div className="create-box">
                       <button className={`blue-btn header__add ${create ? "open" : ""}`} onClick={() => setCreate(!create)}>
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" >
@@ -248,7 +255,7 @@ const Header = observer(({ broker }: { broker?: boolean }) => {
                     </div>
 
                     <button onClick={() => { setMenu(!menu) }}>
-                      <img src={store.user.photo ? `https://rest.1key.group/storage/images/${store.user.id}/${store.user.photo}` : "/img/static/grey.png"} alt="" />
+                      <img src={store.user.photo ? `${API_URL}/storage/images/${store.user.id}/${store.user.photo}` : "/img/static/grey.png"} alt="" />
                     </button>
 
                     <AnimatePresence initial={false}>
@@ -293,7 +300,7 @@ const Header = observer(({ broker }: { broker?: boolean }) => {
                   <div className="header__user">
 
                     <Link href="/profile">
-                      <img src={store.user.photo ? `https://rest.1key.group/storage/images/${store.user.id}/${store.user.photo}` : "/img/static/grey.png"} alt="1Key user avatar" />
+                      <img src={store.user.photo ? `${API_URL}/storage/images/${store.user.id}/${store.user.photo}` : "/img/static/grey.png"} alt="1Key user avatar" />
                     </Link>
                   </div>
                   :

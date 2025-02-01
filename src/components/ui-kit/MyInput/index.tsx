@@ -18,7 +18,7 @@ const MyInput = ({ value, label, required, type, name, onChange, className }: In
   const [pass, setPass] = React.useState(true)
 
   return (
-    <div className={`input text-input ${value ? "active" : ""} ${className}`}>
+    <div className={`input text-input ${value ? "active" : ""} ${className ? styles[className] : ""}`}>
       <p>{label}{required && <span className='required'>*</span>}</p>
       <input
         type={type == "password" ? (pass ? "password" : "text") : type || 'text'}

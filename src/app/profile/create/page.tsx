@@ -6,6 +6,7 @@ import axios from 'axios';
 import { useRouter } from 'next/navigation';
 import 'react-phone-number-input/style.css'
 import styles from "@/styles/forms.module.scss"
+import { API_URL } from '@/http/intex';
 
 
 export default function Settings() {
@@ -22,7 +23,7 @@ export default function Settings() {
   const NewProfile = async () => {
     var avatar = ""
     try {
-      const profile = await axios.post("https://rest.1key.group/api/profiles", {
+      const profile = await axios.post(`${API_URL}/api/profiles`, {
         "name": JSON.stringify(localStorage.getItem('username')),
         "description": about,
         "photos": [],
@@ -41,10 +42,10 @@ export default function Settings() {
         if (selectedImage)
           Img.append("files", selectedImage)
 
-        const UploadAvatar = await axios.post(`https://rest.1key.group/storage/images/${localStorage.getItem('user_id')}`, Img)
+        const UploadAvatar = await axios.post(`${API_URL}/storage/images/${localStorage.getItem('user_id')}`, Img)
         avatar = UploadAvatar.data.savedFiles.savedFiles[0].savedName
       }
-      const user = await axios.put("https://rest.1key.group/api/users", {
+      const user = await axios.put(`${API_URL}/api/users`, {
 
         "id": Number((localStorage.getItem('user_id'))),
         "firstName": name,

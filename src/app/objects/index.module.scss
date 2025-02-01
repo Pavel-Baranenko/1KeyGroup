@@ -104,7 +104,8 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 140%;
-  color: #7786a5;
+  color: #aaa;
+  display: inline-block;
 }
 
 .images {
@@ -147,7 +148,7 @@
 .info {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  padding: clamp(10px, 2vw, 20px);
+  padding: 0 clamp(10px, 2vw, 20px);
   gap: clamp(15px, 2vw, 60px);
 
   border-bottom: 1px solid #e1edfd;
@@ -158,6 +159,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 5px 10px;
+    padding: clamp(10px, 2vw, 20px) 0;
 
     span {
       font-weight: 500;

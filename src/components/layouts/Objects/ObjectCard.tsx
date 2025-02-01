@@ -3,6 +3,7 @@ import { Object } from '@/modules/types/Objects'
 import ObjectsService from '@/modules/services/ObjectsService'
 import Link from 'next/link'
 import React from 'react'
+import { API_URL } from '@/http/intex'
 
 export default function ObjectCard({ object, my }: { object: Object, my?: boolean }) {
 
@@ -25,7 +26,7 @@ export default function ObjectCard({ object, my }: { object: Object, my?: boolea
           <Link href={`/objects/${object.id}`} className="objects-item__preview">
             <div className="objects-image-wrapper full-image">
               {object.photos.length > 0 ?
-                <img src={`https://rest.1key.group/storage/images/${object.photos[0]}`} alt="" />
+                <img src={`${API_URL}/storage/images/${object.photos[0]}`} alt="" />
                 :
                 <div className="one__image-card">
                   <img src="/img/static/object-card.jpg" alt="object-card" />
@@ -36,12 +37,12 @@ export default function ObjectCard({ object, my }: { object: Object, my?: boolea
               <div className="objects-item__preview-box">
                 <div className="objects-image-wrapper">
                   {
-                    <img src={`https://rest.1key.group/storage/images/${object.photos[1]}`} alt="" />
+                    <img src={`${API_URL}/storage/images/${object.photos[1]}`} alt="" />
                   }
                 </div>
                 <div className="objects-image-wrapper">
                   {
-                    <img src={`https://rest.1key.group/storage/images/${object.photos[2]}`} alt="" />
+                    <img src={`${API_URL}/storage/images/${object.photos[2]}`} alt="" />
                   }
                 </div>
               </div>

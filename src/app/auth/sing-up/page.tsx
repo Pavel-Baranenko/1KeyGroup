@@ -10,6 +10,7 @@ import RadioButtonGroup from '@/components/ui-kit/RadioButtonGroup';
 import MyInput from '@/components/ui-kit/MyInput';
 import 'react-phone-number-input/style.css'
 import styles from '../auth.module.scss'
+import { API_URL } from '@/http/intex';
 
 var time = 60;
 var typeCode = "";
@@ -54,7 +55,7 @@ export default function SingIn() {
   const Registration = async () => {
     if (code && code?.length > 3) {
       try {
-        const response = await axios.post("https://rest.1key.group/auth/registration", {
+        const response = await axios.post(`${API_URL}/auth/registration`, {
           "phoneNumber": phoneNumber,
           "username": username,
           "password": password,
@@ -71,7 +72,7 @@ export default function SingIn() {
         localStorage.setItem('user_id', response.data.id);
         localStorage.setItem('user_role', role);
         localStorage.setItem('username', username);
-        push('/settings/profile-create')
+        push('/profile/create')
         if (response.status !== 200) {
           setError(response.data.message)
         }

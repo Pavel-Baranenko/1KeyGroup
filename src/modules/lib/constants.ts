@@ -156,7 +156,4 @@ export const objects = {
     { title: "Buy", value: "buy" },
     { title: "Rent", value: "rent" }
   ]
-
-
-
 }

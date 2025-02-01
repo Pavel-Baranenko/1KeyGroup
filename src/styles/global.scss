@@ -128,7 +128,8 @@ button {
     border-radius: 50px;
     padding: 12px 30px;
     background-color: #fff;
-    height: 64px;
+    height: 50px;
+    box-shadow: 3px 3px 8px -8px rgba(42, 52, 74, 0.2);
   }
 
   &__link {
@@ -614,6 +615,7 @@ section {
 .back-link {
   width: 28px;
   height: 28px;
+  cursor: pointer;
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -1478,4 +1480,73 @@ $duration: 1.4s;
   line-height: 1.5;
   display: block;
   overflow: unset;
+}
+
+.view-map {
+  position: fixed;
+  bottom: 10%;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 230, 0.2);
+  padding: 8px;
+  border-radius: 23px;
+
+  &:hover {
+    box-shadow: 3px 3px 8px 0px rgba(0, 0, 230, 0.2);
+
+    span {
+      width: auto;
+      font-size: 12px;
+      margin: 0 6px;
+      color: #000;
+      opacity: 1;
+    }
+
+    svg path {
+      fill: #0000FF
+    }
+  }
+
+  span {
+    width: 0;
+    font-size: 0;
+    opacity: 0;
+    transition: opacity 0s linear;
+    color: #fff;
+  }
+
+  svg {
+    width: 30px;
+  }
+
+  path {
+    fill: #085cca;
+  }
+}
+
+
+.box-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.grid-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  padding: 0 15px;
+}
+
+.header-btn {
+  min-width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 3px 3px 8px -8px rgba(42, 52, 74, 0.2);
 }

@@ -1,4 +1,4 @@
-import $api from "@/http/intex";
+import $api, { API_URL } from "@/http/intex";
 import { AuthResponse } from "../types/Auth";
 import axios, { AxiosResponse } from "axios";
 
@@ -19,7 +19,7 @@ export default class AuthService {
   }
 
   static async verificationCode(phoneNumber: string | undefined, type: string): Promise<AxiosResponse> {
-    return axios.post('https://rest.1key.group/auth/verify_phone', { phoneNumber, type })
+    return axios.post(`${API_URL}/auth/verify_phone`, { phoneNumber, type })
   }
 
 }

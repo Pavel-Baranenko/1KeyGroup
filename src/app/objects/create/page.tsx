@@ -16,10 +16,9 @@ import styles from "./index.module.scss"
 import MapsService from '@/modules/services/MapService';
 import { Suggestion } from '@/modules/types/Maps';
 
-
 export default function CreateObject() {
   const { store } = React.useContext(Context)
-
+  const router = useRouter()
   const { push } = useRouter();
   const [dealFormat, setFormat] = React.useState<string>("")
   const [type, setType] = React.useState<string>("")
@@ -150,7 +149,8 @@ export default function CreateObject() {
       commission: {
         cost: commission,
         commissionType: comType
-      }
+      },
+      creator: store.user.id
     }, store.user.ownProfiles[0].id)
     if (response.status == 200) push("/objects/my")
   }
@@ -165,7 +165,7 @@ export default function CreateObject() {
         <div className="form settings" >
           <div className="settings-top">
             <h4>
-              <a href="javascript:history.back()" className="back-link mob">
+              <a onClick={() => router.back()} className="back-link mob">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" >
                   <rect width="28" height="28" rx="14" fill="white" />
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M16.0959 19.7071C16.4865 19.3166 16.4865 18.6834 16.0959 18.2929L11.8031 14L16.0959 9.70711C16.4865 9.31658 16.4865 8.68342 16.0959 8.29289C15.7054 7.90237 15.0723 7.90237 14.6817 8.29289L10.0353 12.9393C9.4495 13.5251 9.4495 14.4749 10.0353 15.0607L14.6817 19.7071C15.0723 20.0976 15.7054 20.0976 16.0959 19.7071Z" fill="#7786A5" />
@@ -236,12 +236,8 @@ export default function CreateObject() {
                         </div>
                       )
                     })}
-
-
-
                   </div>
                 }
-
               </div>
               <div >
                 <DropDown value={locationType || "Exact address"} options={objects.adress} onChange={setLocationType} />

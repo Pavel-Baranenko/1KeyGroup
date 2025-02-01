@@ -1,0 +1,34 @@
+.map {
+  position: relative;
+  width: 100svw;
+  height: 100svh;
+}
+
+.back {
+  position: absolute;
+  z-index: 99;
+  left: 40px;
+  top: 30px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #F2F6FB;
+  box-shadow: 4px 4px 8px 0px rgba(0, 0, 230, 0.2);
+
+  &:hover {
+    box-shadow: 10px 9px 19px 6px rgba(0, 0, 230, 0.2);
+
+    svg {
+      position: relative;
+      right: 2px;
+    }
+  }
+}
+
+.searchWrap {
+  position: absolute;
+  z-index: 99;
+  top: 23px;
+  left: 10%;
+  width: clamp(40%, 80%, 800px);
+}

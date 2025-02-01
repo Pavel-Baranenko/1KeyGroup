@@ -1,6 +1,7 @@
 import * as React from "react";
 import mapboxgl from "mapbox-gl";
 import "mapbox-gl/dist/mapbox-gl.css";
+import styles from './index.module.scss'
 
 interface MapboxMapProps {
   initialOptions?: Omit<mapboxgl.MapOptions, "container">;
@@ -10,13 +11,12 @@ interface MapboxMapProps {
   coordinates: number[]
 }
 
-function ObjectLocation({
+export default function GlobalMap({
   initialOptions = {},
   onCreated,
   onLoaded,
   coordinates,
   onRemoved,
-
 }: MapboxMapProps) {
   const [map, setMap] = React.useState<mapboxgl.Map>();
 
@@ -32,16 +32,16 @@ function ObjectLocation({
       accessToken: 'pk.eyJ1IjoiMWtleSIsImEiOiJjbTM2YTJ1NHYwMjU0MmtyM2t1cDdtNDB3In0.bwB-LDiE1zTuh4p1UW23-w',
       style: "mapbox://styles/mapbox/streets-v11",
       center: [coordinates[0], coordinates[1]],
-      zoom: 13,
+      zoom: 12,
       ...initialOptions,
     });
 
     setMap(mapboxMap);
 
 
-    const marker = new mapboxgl.Marker({ color: '#0000E6', rotation: 5 })
-      .setLngLat([coordinates[0], coordinates[1]])
-      .addTo(mapboxMap);
+    // const marker = new mapboxgl.Marker({ color: '#0000E6', rotation: 5 })
+    //   .setLngLat([coordinates[0], coordinates[1]])
+    //   .addTo(mapboxMap);
 
 
     if (onCreated) onCreated(mapboxMap);
@@ -56,7 +56,6 @@ function ObjectLocation({
 
   }, []);
 
-  return <div ref={mapNode} style={{ width: "100%", height: "100%" }} />;
+  return <div ref={mapNode} style={{ width: "100%", height: "100svh" }} className={styles.global} />;
 }
 
-export default ObjectLocation;
