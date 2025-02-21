@@ -1,5 +1,4 @@
 import axios, { AxiosResponse } from "axios";
-// import { access_token, session_token } from "../config";
 
 const session_token = '0eb980ab-92a6-4291-8947-b21cfc808219'
 const access_token = 'pk.eyJ1IjoiMWtleSIsImEiOiJjbTM2YTJ1NHYwMjU0MmtyM2t1cDdtNDB3In0.bwB-LDiE1zTuh4p1UW23-w'
